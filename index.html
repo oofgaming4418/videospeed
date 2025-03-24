@@ -13,10 +13,28 @@
     <a href="options.html">Options</a>
     <script>
       let person = prompt("Please enter the website you want to visit");
-
-      // Create the iframe element
+      function setUserAgent(window, userAgent) {
+  if (window.navigator.userAgent != userAgent) {
+    var userAgentProp = {
+      get: function() {
+        return userAgent;
+      }
+    };
+    try {
+      Object.defineProperty(window.navigator, 'userAgent', userAgentProp);
+    } catch (e) {
+      window.navigator = Object.create(navigator, {
+        userAgent: userAgentProp
+      });
+    }
+  }
+}
+      
 const iframe = document.createElement('iframe');
-
+setUserAgent(
+    document.querySelector('iframe').contentWindow, 
+    'Aakash Chakravarthy Mobile Agent'
+);
 // Set attributes (optional)
 iframe.src = person; // URL to display in the iframe
 iframe.id = 'my-iframe';
