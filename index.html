@@ -11,6 +11,24 @@
     <a href="popup.html">Popup</a>
     <br>
     <a href="options.html">Options</a>
+    <script>
+      let person = prompt("Please enter the website you want to visit");
 
+      // Create the iframe element
+const iframe = document.createElement('iframe');
+
+// Set attributes (optional)
+iframe.src = 'your-source-url'; // URL to display in the iframe
+iframe.id = 'my-iframe';
+iframe.width = '600';
+iframe.height = '400';
+iframe.style.border = 'none'; // Remove border
+
+// Append the iframe to the document body or a specific element
+document.body.appendChild(iframe); // Add to the end of the body
+// or
+// const container = document.getElementById('my-container');
+// container.appendChild(iframe);
+    </script>
   </body>
 </html>
