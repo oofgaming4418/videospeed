@@ -31,10 +31,7 @@
 }
       
 const iframe = document.createElement('iframe');
-setUserAgent(
-    document.querySelector('iframe').contentWindow, 
-    'Aakash Chakravarthy Mobile Agent'
-);
+
 // Set attributes (optional)
 iframe.src = person; // URL to display in the iframe
 iframe.id = 'my-iframe';
@@ -44,6 +41,10 @@ iframe.style.border = 'none'; // Remove border
 
 // Append the iframe to the document body or a specific element
 document.body.appendChild(iframe); // Add to the end of the body
+setUserAgent(
+    document.querySelector('iframe').contentWindow, 
+    'Aakash Chakravarthy Mobile Agent'
+);
 // or
 // const container = document.getElementById('my-container');
 // container.appendChild(iframe);
